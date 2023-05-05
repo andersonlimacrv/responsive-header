@@ -1,0 +1,315 @@
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #8ec5ff;
+    background-image: radial-gradient(circle, #1a293e, #1f1f1f);
+    overflow: hidden !important;
+}
+
+header {
+    background-image: radial-gradient(circle, #1e1e1e80, rgba(33, 33, 33, 0.5));
+    box-shadow: 3px 3px 3px #000a, 2px 2px 2px #250202;
+    overflow: hidden !important;
+}
+
+.nav_header {
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1440px;
+    margin: auto;
+}
+
+
+/* ---------------------------------------Inicio de estilização LOGO------------------------------------------------*/
+
+.logo {
+    width: 80px;
+    height: 80px;
+    display: flex;
+    padding: 5px;
+}
+
+
+/* ---------------------------------------Fim de estilização LOGO ------------------------------------------------*/
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin: 5px 0;
+}
+
+.links a,
+.user a {
+    color: Gainsboro;
+    text-decoration: none;
+    padding-bottom: 5px;
+    padding: 0.5rem;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+}
+
+.links a:hover {
+    text-decoration: bold;
+    color: #05a8ee;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 2px;
+    width: 0;
+    background-color: #05a8ee;
+    transition: .5s ease;
+}
+
+.btn:hover {
+    color: #1e1e2b;
+    transition-delay: .5s;
+}
+
+.btn:hover::before {
+    width: 100%;
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    height: 0;
+    width: 100%;
+    box-shadow: 0px 0px 0px 1px rgba(0, 0, 0, 0);
+    transition: .4s ease;
+    z-index: -1;
+}
+
+.btn:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    color: aliceblue;
+}
+
+.user a:hover {
+    color: #CC0000;
+    text-decoration: bold;
+}
+
+#btnMenu,
+#toggleMenu {
+    display: none;
+}
+
+.containerMenu {
+    font-size: 22px;
+    display: none;
+}
+
+
+/* ---------------------------------------Inicio de estilização dos botões header ------------------------------------------------*/
+
+.btn_exit {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: .6em 1.5em;
+    border-width: 3px;
+    border-radius: 0.5em;
+    transition: 0.3s ease;
+    background-image: linear-gradient(135deg, rgba(33, 33, 33, 1) 0%, rgb(20, 35, 35) 100%);
+    font-size: 1em;
+    margin: 0 25px;
+}
+
+.btn_exit:hover {
+    transform: scale(1.1);
+}
+
+.achor_header,
+.achor_header_exit {
+    font-size: 1em;
+    color: white;
+    z-index: 1;
+    transition: .5s ease;
+}
+
+.achor_header:hover {
+    transform: scale(1.1);
+    transition: .5s ease;
+    cursor: pointer;
+}
+
+.icon {
+    color: #CC0000;
+    text-decoration: none;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+}
+
+.user_description {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 5px;
+    padding: 2x;
+    font-size: 10px;
+}
+
+.icon_user {
+    font-size: 35px;
+    padding: 2px;
+    color: #C0C0C0
+}
+
+.current_user,
+.current_company {
+    color: #05a8ee;
+    font-weight: bold;
+}
+
+.logoff {
+    font-size: 12px;
+    margin: auto
+}
+
+
+/* ---------------------------------------FIM de estilização dos botões header ------------------------------------------------*/
+
+@media only screen and (max-width: 999px) {
+
+    .containerMenu,
+    .switch {
+        display: block;
+        margin-right: 1rem;
+    }
+
+    .links {
+        position: fixed;
+        background-image: radial-gradient(circle, #1a293e, #1f1f1f);
+        min-height: calc(100vh - 90px);
+        flex-flow: column;
+        width: 100%;
+        top: 90px;
+        left: 100%;
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+    }
+
+    .user {
+        position: fixed;
+        left: 100%;
+        top: 90%;
+        width: 100%;
+        transition: all 0.5s;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+    }
+
+    #btnMenu:checked~.links {
+        left: 0;
+    }
+
+    #btnMenu:checked~.user {
+        left: 25%;
+    }
+
+    .achor_header {
+        padding: 8%;
+        width: 50%;
+        text-align: center;
+        background: rgba(113, 48, 48, 0);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border: 1px solid rgba(48, 48, 48, 0.39);
+    }
+
+    .btn_exit a {
+        flex-direction: column;
+    }
+
+    .links {
+        justify-content: flex-start;
+        padding-top: 15%;
+    }
+
+    .achor_header:hover {
+        transform: scale(1.05);
+    }
+
+    .btn,
+    .btn:before {
+        transform: none;
+        background-color: transparent;
+        transition: .1s ease;
+    }
+}
+
+
+/* Inicio de estilização toggle*/
+
+#toggleMenu {
+    background: none;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+}
+
+#toggleMenu::before {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background-color: #fff;
+    transition: 0.5s;
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 0px #fff;
+    /* Barra do meio */
+}
+
+#toggleMenu::after {
+    content: "";
+    position: absolute;
+    width: 28px;
+    height: 2px;
+    background-color: #fff;
+    transition: 0.5s;
+    transform: translateY(10px);
+}
+
+#toggleMenu.active {
+    background-color: #3a0404;
+    border-radius: 0.5rem;
+}
+
+#toggleMenu.active::before {
+    transform: translateY(0) rotate(45deg);
+    box-shadow: 0 0 0 #FFF;
+}
+
+#toggleMenu.active::after {
+    transform: translateY(0)rotate(-45deg);
+}
